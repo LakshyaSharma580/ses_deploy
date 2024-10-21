@@ -30,7 +30,7 @@ pipeline {
                         echo "Creating email identity: ${params.EMAIL_IDENTITY}"
                         sh """
                             . venv/bin/activate
-                            python3 ses_deploy\identitiy_creation.py --email ${params.EMAIL_IDENTITY}
+                            python3 identitiy_creation.py --email ${params.EMAIL_IDENTITY}
                         """
                     } else {
                         echo "No email identity provided."
@@ -41,7 +41,7 @@ pipeline {
                         echo "Creating domain identity: ${params.DOMAIN_IDENTITY}"
                         sh """
                             . venv/bin/activate
-                            python3 ses_deploy\identitiy_creation.py --domain ${params.DOMAIN_IDENTITY}
+                            python3 identitiy_creation.py --domain ${params.DOMAIN_IDENTITY}
                         """
                     } else {
                         echo "No domain identity provided."
